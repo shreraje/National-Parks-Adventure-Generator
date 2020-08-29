@@ -5,6 +5,13 @@ let sunrise = $('#sunrise');
 let dayLength = $('#dayLength');
 
 //Event listener for the searchbar
+const searchBar = document.getElementById('search');
+const formBtn = document.getElementById('btn');
+formBtn.addEventListener('click', (e) => {
+    console.log(searchBar.value); 
+    
+});
+
 
 
 
