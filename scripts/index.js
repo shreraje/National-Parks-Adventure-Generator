@@ -18,13 +18,24 @@ let dayLength = $('#dayLength');
     //curl -H 'X-Api-Key: INSERT-API-KEY-HERE' 
     //API Key: CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv
     //Ex call: https://developer.nps.gov/api/v0/parks?stateCode=DC,MD,VA&fields=images
-let activity = 'hiking';
-let queryURL1 = 'https://developer.nps.gov/api/v1/activities?q=' + activity + '&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
+let stateCode = 'WY';
+let queryURL1 = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=5&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
 $.ajax({
     url: queryURL1,
     method: 'GET'
 }).then(function(response1) {
-    console.log(response1)
+    console.log(response1);
+    //Park description
+    console.log(response1.data[0].description);
+    //Park activities array
+    console.log(response1.data[0].activities);
+    //Park directions URL for navbar
+    console.log(response1.data[0].directionsURL);
+    //National Park Service official site URL
+    console.log(response1.data[0].url);
+    //Lat long to pass to sunrise/sunset API
+    console.log(response1.data[0].latitude);
+    console.log(response1.data[0].longitude);
 });
 
 
