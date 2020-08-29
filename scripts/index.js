@@ -3,6 +3,11 @@ console.log('Sanity Check');
 //Variable definitions
 
 
+
+
+let sunset= $('#sunset');
+let sunrise = $('#sunrise');
+let dayLength = $('#dayLength');
 //Event listener for the searchbar
 
 //https://ridb.recreation.gov/api/v1/Endpoint?parms
@@ -34,7 +39,7 @@ $.ajax({
 //     method: 'GET'
 // }).then(function(response) {
 //     console.log(response);
-
 // });
+
 
 
