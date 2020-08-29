@@ -12,7 +12,8 @@ let dayLength = $('#dayLength');
 const searchBar = document.getElementById('search');
 const formBtn = document.getElementById('btn');
 formBtn.addEventListener('click', (e) => {
-    console.log(searchBar.value);
+    console.log(searchBar.value); 
+    
 });
 
 
