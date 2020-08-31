@@ -63,4 +63,21 @@ function getInfo(stateCode) {
     });
 };
 
-getInfo();
+// Air quality
+var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
+var state = 'Washington'
+// country = 'USA'
+var queryURL2 = "https://api.airvisual.com/v2/cities?state=" + state + "&country=USA" + "&key=" + APIkey;
+
+
+
+$.ajax({
+    url: queryURL2,
+    method: 'GET'
+}).then(function(response) {
+    console.log(response);
+    console.log(response.data[70].city);
+    console.log(response.data[110].city);
+
+});
+// https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=11I6mpmjYcNATrYObpRJDakmAIijHCsWb475e60h
