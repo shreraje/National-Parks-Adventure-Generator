@@ -4,6 +4,10 @@ console.log('Sanity Check');
 let sunset = $('#sunset');
 let sunrise = $('#sunrise');
 let dayLength = $('#dayLength');
+const card1 = $('#card1');
+const card2 = $('#card2');
+const card3 = $('#card3');
+const card4 = $('#card4');
 
 //Event listener for the searchbar
 // document.addEventListener('DOMContentLoaded', function () {
@@ -52,16 +56,39 @@ function getInfo(stateCode) {
             console.log(response2);
         });
 
-        //Loop or function to append information to cards on the HTML
-        let parkname = $('#park-name');
-        let info = $('#park-info');
-        let cardImage = $('#card-image');
-        parkname.text(response1.data[0].fullName);
-        info.text(response1.data[0].description);
-        cardImage.attr('src', response1.data[0].images[0].url);
-        //Links or buttons on the cards that will display full park information to the user?
+        //Loop to dynamically generate multiple cards
+        //cardID array references items in HTML to append cards to
+        cardID = [card1, card2, card3, card4];
+        //imageID array creates a unique ID for each image on the cards
+        imageID = ['cardimg1', 'cardimg2', 'cardimg3', 'cardimg4'];
+        //parkID gives each park name span a unique ID
+        parkID = ['parkName1', 'parkName2', 'parkName3', 'parkName4'];
+        //infoID gives each information section a unqiue ID
+        infoID = ['info1', 'info2', 'info3', 'info4'];
+        //data[i] attributes determines where info is pulled from the NPS API
+        fetchData = [response1.data[0], response1.data[1], response1.data[2], response1.data[3]];
+
+        for (i = 0; i < cardID.length; i++) {
+        //Appends to the div class=card Section 1
+        let imgDiv = $('<div>').attr('class', 'card-image');
+        let newImg = $('<img>').attr('id', imageID[i]).attr('src', fetchData[i].images[0].url);
+        let newSpan = $('<span>').attr('id', parkID[i]).attr('class', 'card-title').text(fetchData[i].fullName);
+        //Section 2
+        let cardDiv = $('<div>').attr('class', 'card-content');
+        let para = $('<p>').attr('id', infoID[i]).text(fetchData[i].description);
+        //Section 3
+        let actionDiv = $('<div>').attr('class', 'card-action');
+        let infoBtn = $('<button>').text('Get more info!');
+        //Append contents to div for each section
+        let section1 = imgDiv.append(newImg).append(newSpan);
+        let section2 = cardDiv.append(para);
+        let section3 = actionDiv.append(infoBtn);
+        //Append sections to the cards in the HTML
+        cardID[i].append(section1).append(section2).append(section3);
+        }
     });
 };
+getInfo();
 
 // Air quality
 var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
