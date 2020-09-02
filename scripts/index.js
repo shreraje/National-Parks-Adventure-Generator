@@ -98,3 +98,11 @@ $.ajax({
     console.log(response.data[70].city);
     console.log(response.data[110].city);
 });
+
+// Footer and leaving comments
+
+let commentBox = document.getElementById('comments');
+$('#buttonTwo').on("click",function(event){
+    console.log(commentBox.value)
+    localStorage.setItem("comment box", commentBox.value)
+});
