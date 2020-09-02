@@ -8,25 +8,6 @@ const card2 = $('#card2');
 const card3 = $('#card3');
 const card4 = $('#card4');
 
-
-// Air quality
-console.log("Hello World");
-$("button").on("click", function(event) {
-    event.preventDefault();
-    console.log("Hello World");
-
-    var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
-    // let lat = 35.9;
-    // let lon = 140;
-    var city = $("#city").val();
-    var state = $("#state").val();
-    console.log(city);
-    // country = 'USA'
-    var queryURL2 = "https://api.airvisual.com/v2/city?city=" + city + "&state=" + state + "&country=USA&key=" + APIkey;
-    // var queryURL3 = "https://api.airvisual.com/v2/nearest_city?lat=" + lat + "&lon=" + lon + "&key=" + APIkey
-    // http://api.airvisual.com/v2/nearest_city?lat={{LATITUDE}}&lon={{LONGITUDE}}&key={{YOUR_API_KEY}}
-    
-
 //Event listener for the searchbar
 const searchBar = document.getElementById('search');
 const formBtn = document.getElementById('btn');
@@ -34,43 +15,26 @@ formBtn.addEventListener('click', (e) => {
     let stateCode = searchBar.value
     getInfo(stateCode)
 });
+    
 
 
 //API Key: CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv
 //National Park Service Ajax call
 function getInfo(stateCode) {
-    let queryURL1 = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=5&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
+    let queryURLNPS = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=5&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
     $.ajax({
-        url: queryURL2,
+        url: queryURLNPS,
         method: 'GET'
-    }).then(function(response) {
-        console.log(response);
-        console.log(response.data.current.pollution.aqius);
-
-        // Transferring content to HTML for current day 
-        $(".city").text(response.data.city );
-        $(".date").html("Date:   " + response.data.current.pollution.ts);
-        $(".air-pollution").html("Air Quality Index:   " + response.data.current.pollution.aqius);
-
-        
-    });
-});
-
-
-
-
-// https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=11I6mpmjYcNATrYObpRJDakmAIijHCsWb475e60h
-    }).then(function (response1) {
+    }).then(function(response1) {
         console.log(response1);
-   
         // Sunrise/Sunset Ajax call. Takes parameters from NPS API
         let lat = response1.data[0].latitude;
         let lng = response1.data[0].longitude;
         let date = moment().format('YYYY-MM-DD');
-        let queryURL2 = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
-        console.log(queryURL2);
+        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
+        console.log(queryURLSunrise);
         $.ajax({
-            url: queryURL2,
+            url: queryURLSunrise,
             method: 'GET'
         }).then(function (response2) {
             console.log(response2);
@@ -111,24 +75,31 @@ function getInfo(stateCode) {
         let section3 = actionDiv.append(infoBtn);
         //Append sections to the cards in the HTML
         cardID[i].append(section1).append(section2).append(section3);
-        };
+        };       
     });
 };
 
 
 // Air quality
-var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
-var state = 'Washington'
-// country = 'USA'
-var queryURL2 = "https://api.airvisual.com/v2/cities?state=" + state + "&country=USA" + "&key=" + APIkey;
+$("button").on("click", function(event) {
+    event.preventDefault();
+    console.log("Hello World");
+    var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
+    var city = $("#city").val();
+    var state = $("#state").val();
+    console.log(city);
+    var queryURLAir = "https://api.airvisual.com/v2/city?city=" + city + "&state=" + state + "&country=USA&key=" + APIkey;
 
+    $.ajax({
+        url: queryURLAir,
+        method: 'GET'
+    }).then(function(response3) {
+        console.log(response3);
+        console.log(response3.data.current.pollution.aqius);
 
-
-$.ajax({
-    url: queryURL2,
-    method: 'GET'
-}).then(function(response) {
-    console.log(response);
-    console.log(response.data[70].city);
-    console.log(response.data[110].city);
+        // Transferring content to HTML for current day 
+        $(".city").text(response3.data.city );
+        $(".date").html("Date:   " + response3.data.current.pollution.ts);
+        $(".air-pollution").html("Air Quality Index:   " + response3.data.current.pollution.aqius);
+    });
 });
