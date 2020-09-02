@@ -8,6 +8,7 @@ const card2 = $('#card2');
 const card3 = $('#card3');
 const card4 = $('#card4');
 
+
 //Event listener for the searchbar
 const searchBar = document.getElementById('search');
 const formBtn = document.getElementById('btn');
@@ -17,9 +18,8 @@ formBtn.addEventListener('click', (e) => {
 });
     
 
-
 //API Key: CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv
-//National Park Service Ajax call
+//National Park Service Ajax call. Function is attached to searchbar event listener
 function getInfo(stateCode) {
     let queryURLNPS = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=5&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
     $.ajax({
@@ -27,18 +27,6 @@ function getInfo(stateCode) {
         method: 'GET'
     }).then(function(response1) {
         console.log(response1);
-        // Sunrise/Sunset Ajax call. Takes parameters from NPS API
-        let lat = response1.data[0].latitude;
-        let lng = response1.data[0].longitude;
-        let date = moment().format('YYYY-MM-DD');
-        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
-        console.log(queryURLSunrise);
-        $.ajax({
-            url: queryURLSunrise,
-            method: 'GET'
-        }).then(function (response2) {
-            console.log(response2);
-        });
         
         //cardID array references items in HTML to append cards to
         cardID = [card1, card2, card3, card4];
@@ -68,7 +56,7 @@ function getInfo(stateCode) {
         let para = $('<p>').attr('id', infoID[i]).text(fetchData[i].description);
         //Section 3
         let actionDiv = $('<div>').attr('class', 'card-action');
-        let infoBtn = $('<button>').attr('class', 'waves-effect waves-light btn').addClass('teal darken-4').text('Get more info!');
+        let infoBtn = $('<button>').attr('class', 'waves-effect waves-light btn teal darken-4 cardBtn').attr('data-parkCode', fetchData[i].parkCode).text('Get more info!');
         //Append contents to div for each section
         let section1 = imgDiv.append(newImg).append(newSpan);
         let section2 = cardDiv.append(para);
@@ -80,7 +68,37 @@ function getInfo(stateCode) {
 };
 
 
-// Air quality
+//moreInfo will trigger when the user clicks the button on the cards and generate info specifically for the given park
+function moreInfo(parkCode) {
+    let queryURLpark = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&stateCode=&limit=5&sort=&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
+    $.ajax({
+        url: queryURLpark,
+        method: 'GET'
+    }).then(function(response2) {
+        console.log(response2);
+
+        // Sunrise/Sunset Ajax call. Takes parameters from NPS API
+        let lat = response2.data[0].latitude;
+        let lng = response2.data[0].longitude;
+        let date = moment().format('YYYY-MM-DD');
+        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
+        $.ajax({
+            url: queryURLSunrise,
+            method: 'GET'
+        }).then(function (response4) {
+            console.log(response4);
+        });
+    });
+};
+
+//Event listener for card buttons to generate further information
+$('.card').on('click', ".cardBtn", function(event) {
+    console.log(event.currentTarget.dataset.parkcode);
+    let parkCode = event.currentTarget.dataset.parkcode;
+    moreInfo(parkCode);
+});
+
+// Air quality 
 $("button").on("click", function(event) {
     event.preventDefault();
     console.log("Hello World");
