@@ -98,6 +98,16 @@ $('.card').on('click', ".cardBtn", function(event) {
     moreInfo(parkCode);
 });
 
+
+// Footer and leaving comments
+
+let commentBox = document.getElementById('comments');
+$('#buttonTwo').on("click",function(event){
+    console.log(commentBox.value)
+    localStorage.setItem("comment box", commentBox.value)
+});
+
+
 // Air quality 
 $("button").on("click", function(event) {
     event.preventDefault();
@@ -121,3 +131,4 @@ $("button").on("click", function(event) {
         $(".air-pollution").html("Air Quality Index:   " + response3.data.current.pollution.aqius);
     });
 });
+
