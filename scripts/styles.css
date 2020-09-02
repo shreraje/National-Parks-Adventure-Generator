@@ -1,6 +1,17 @@
+.error {
+    color: red;
+}
+
+.safety {
+    font-size: 1.5em;
+}
+
+blockquote {
+    text-align: center;
+}
+
 #airquality{
     font-style: italic;
     background-color: rgb(118, 230, 230);
     text-align: center;
 }
-   

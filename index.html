@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US" dir="rtl">
 
 <head>
   <!-- Compiled and minified CSS -->
@@ -8,7 +8,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- External CSS stylesheet -->
   <link rel="stylesheet" href="scripts/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Favicon link -->
+  <link rel="icon" href="Images/favicon-16x16.png">
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
@@ -45,7 +47,7 @@
     <a class="carousel-item" href="#two!"><img src="Images/Img 2.jpg"></a>
     <a class="carousel-item" href="#three!"><img src="Images/Img3.jpg"></a>
     <a class="carousel-item" href="#four!"><img src="Images/Img4.jpg"></a>
-    <a class="carousel-item" href="#five!"><img src="Images/Img5.jpg"></a>
+    <a class="carousel-item" href="#five!"><img src="Images/img5.jpg"></a>
   </div>
 
   <!-- Searchbar -->
@@ -53,18 +55,18 @@
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input id="search" type="search" required placeholder="search">
-          <label class="label-icon" for="search"><i class="material-icons"></i></label>
+          <input id="search" type="search" placeholder="Enter state code here. e.g. NY, CA, FL" required>
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
       </form>
     </div>
   </nav>
-
-  <button id="btn" class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
+  <button id="btn" class="btn waves-effect waves-light" type="submit" name="action">Search
+    <i class="material-icons right">search</i>
   </button>
 
+  <div class="verify"></div>
 
   <!-- Div for park general info -->
 <div class="row">
@@ -84,7 +86,22 @@
   </div>
 </div>
   
-
+<!-- Air quality information -->
+<h2 class="safety">Your health and wellbeing is important to us! Take a moment before you step out for the day to 
+  search your location and view the air quality and weather conditions. 
+</h2>
+<blockquote>
+  <pre>
+  "Still round the corner there may wait a
+   new road or a secret gate, and though I 
+   oft have passed them by, a day will
+   come at last when I shall take the
+   hidden paths that run west of the moon,
+   east of the sun."
+  <cite>-Frodo Baggins</cite>
+  </pre>
+</blockquote>
+<br>
 <div class="card">
   <form class="form">
     <h6> Search Air Quality</h6>
@@ -96,11 +113,11 @@
   </form>
 </div>
 <div id="airquality">
-<h5>Air Quality Information</h5>
-<div class="city">City</div>
-<div class="date">Date</div>
-<div class="air-pollution">Air Quality index</div>
-<p> * Note: Low (1-3); Moderate (4-6); High (7-10); Very High (Above 10)</p>
+  <h5>Air Quality Information</h5>
+    <div class="city">City</div>
+    <div class="date">Date</div>
+    <div class="air-pollution">Air Quality index</div>
+    <p> * Note: Low (1-3); Moderate (4-6); High (7-10); Very High (Above 10)</p>
 </div>
 
 <!-- Footer -->
