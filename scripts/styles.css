@@ -1,6 +1,17 @@
-
 .error {
     color: red;
+}
+
+.warning {
+    border: 2px solid black;
+    border-radius: 25px;
+    text-align: center;
+    width: 20em;
+    margin: auto;
+}
+
+.erroricon {
+    font-size: 48px;
 }
 
 .safety {

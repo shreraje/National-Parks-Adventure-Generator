@@ -33,22 +33,6 @@ function getInfo(stateCode) {
         method: 'GET'
     }).then(function(response1) {
         console.log(response1);
-<<<<<<< HEAD
-        // Sunrise/Sunset Ajax call. Takes parameters from NPS API
-        let lat = response1.data[0].latitude;
-        let lng = response1.data[0].longitude;
-        let date = moment().format('YYYY-MM-DD');
-        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
-        console.log(queryURLSunrise);
-        $.ajax({
-            url: queryURLSunrise,
-            method: 'GET'
-        }).then(function (response2) {
-            console.log(response2);
-
-        });
-=======
->>>>>>> 37d6559878e3836818af8a4fce5bed7f7015b014
         
         //cardID array references items in HTML to append cards to
         cardID = [card1, card2, card3, card4];
