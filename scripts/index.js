@@ -13,8 +13,14 @@ const card4 = $('#card4');
 const searchBar = document.getElementById('search');
 const formBtn = document.getElementById('btn');
 formBtn.addEventListener('click', (e) => {
-    let stateCode = searchBar.value
-    getInfo(stateCode)
+    let stateCode = searchBar.value.toUpperCase();
+    if(stateCode.length > 3 || stateCode.length < 2 || isNaN(stateCode) === false) {
+        $('div.verify').text('Please enter a valid state code! e.g. NY, CA, FL').attr('class', 'error');
+    } 
+    else {
+    getInfo(stateCode);
+    $('div.verify').empty();
+    };
 });
     
 
