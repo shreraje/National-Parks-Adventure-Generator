@@ -32,7 +32,11 @@ blockquote {
     padding-left: 10px;
    justify-content: center;
 }
-#air-weather-forcast{
+
+.air-header, .weather-header{
+    font-weight: bolder;
+}
+#weather-forcast, #airquality{
     font-weight: bold;
     font-style: italic;
     background-color: rgb(118, 230, 230);
