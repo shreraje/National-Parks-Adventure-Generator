@@ -88,7 +88,7 @@ function moreInfo(parkCode) {
         let lat = response2.data[0].latitude;
         let lng = response2.data[0].longitude;
         let date = moment().format('YYYY-MM-DD');
-        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
+        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date + '&formatted=0';
         $.ajax({
             url: queryURLSunrise,
             method: 'GET'
