@@ -82,7 +82,8 @@ function moreInfo(parkCode) {
         method: 'GET'
     }).then(function(response2) {
         console.log(response2);
-
+        console.log(response2.data[0].latitude);
+        console.log(response2.data[0].longitude);
         // Sunrise/Sunset Ajax call. Takes parameters from NPS API
         let lat = response2.data[0].latitude;
         let lng = response2.data[0].longitude;
@@ -93,6 +94,15 @@ function moreInfo(parkCode) {
             method: 'GET'
         }).then(function (response4) {
             console.log(response4);
+
+            // Transferring content to HTML for current day surise, sunset & day-length
+            $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
+            $(".sunset").text("Sunset:  " + response4.results.sunset);
+            $(".day-length").text("Day Length:  " + response4.results.day_length);
+
+            console.log("Sunrise:  " + response4.results.sunrise);
+            console.log("Sunset:  " + response4.results.sunset);
+            console.log("Day Length:  " + response4.results.day_length);
         });
     });
 };
@@ -130,15 +140,15 @@ $("button").on("click", function(event) {
         console.log(response3);
         console.log(response3.data.current.pollution.aqius);
 
-        // Transferring content to HTML for current day 
+        // Transferring content to HTML for current day air quality & weather information
         $(".city").text(response3.data.city );
-        $(".date").html("Date:   " + response3.data.current.pollution.ts);
-        $(".air-pollution").html("Air Quality Index (US EPA standard):   " + response3.data.current.pollution.aqius);
-        $(".temp").html("Temperature (°C):   " + response3.data.current.weather.tp);
-        $(".atm-pressure").html("Atmospheric Pressure (hPa):   " + response3.data.current.weather.pr);
-        $(".humidity").html("Humidity (%):   " + response3.data.current.weather.hu);
-        $(".wind").html("Wind Speed (m/s):   " + response3.data.current.weather.ws);
-        $(".wind-direction").html("Wind Direction (as an angle of 360° (N=0, E=90, S=180, W=270):   " + response3.data.current.weather.wd);
+        $(".date").text("Date:   " + response3.data.current.pollution.ts);
+        $(".air-pollution").text("Air Quality Index (US EPA standard):   " + response3.data.current.pollution.aqius);
+        $(".temp").text("Temperature (°C):   " + response3.data.current.weather.tp);
+        $(".atm-pressure").text("Atmospheric Pressure (hPa):   " + response3.data.current.weather.pr);
+        $(".humidity").text("Humidity (%):   " + response3.data.current.weather.hu);
+        $(".wind").text("Wind Speed (m/s):   " + response3.data.current.weather.ws);
+        $(".wind-direction").text("Wind Direction (as an angle of 360° (N=0, E=90, S=180, W=270):   " + response3.data.current.weather.wd);
 
     });
 });
