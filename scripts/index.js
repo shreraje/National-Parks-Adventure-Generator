@@ -111,7 +111,8 @@ function moreInfo(parkCode) {
 $('.card').on('click', ".cardBtn", function(event) {
     console.log(event.currentTarget.dataset.parkcode);
     let parkCode = event.currentTarget.dataset.parkcode;
-    moreInfo(parkCode);
+    localStorage.setItem('code', parkCode);
+    window.location.href="act.html";
 });
 
 
