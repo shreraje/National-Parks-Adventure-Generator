@@ -29,10 +29,34 @@ function moreInfo() {
             $(".day-length").text("Day Length:  " + response4.results.day_length);
         });
 
-        //Generate activities in the list on second HTML page
+        //Generate info for park contacts card
+        $('#phone').text('Phone:' + ' ' + response2.data[0].contacts.phoneNumbers[0].phoneNumber + ' ' + 'Ext.' + ' ' + response2.data[0].contacts.phoneNumbers[0].extension);
+        $('#email').text('Email:' + ' ' + response2.data[0].contacts.emailAddresses[0].emailAddress);
+        $('#directions').attr('href', response2.data[0].directionsUrl);
+
+        // // Transferring content to HTML for current day surise, sunset & day-length
+        $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
+        $(".sunset").text("Sunset:  " + response4.results.sunset);
+        $(".day-length").text("Day Length:  " + response4.results.day_length);
+
+        console.log("Sunrise:  " + response4.results.sunrise);
+        console.log("Sunset:  " + response4.results.sunset);
+        console.log("Day Length:  " + response4.results.day_length);
+
+        //Generate info for park general info card
+        let advisory = $('<p>').text(response2.data[0].operatingHours[0].description);
+        $('#advisory').append(advisory);
+
+        //List all activities within the proper collection
         for (i = 0; i < response2.data[0].activities.length; i++) {
             let item = $('<li>').attr('class', 'collection-item').text(response2.data[0].activities[i].name);
-            $('#list-header').append(item);
+            $('#activity-header').append(item);
+        };
+
+        //List all entrance fees within the proper collection 
+        for (i = 0; i < response2.data[0].entranceFees.length; i++) {
+            let newItem = $('<li>').attr('class', 'collection-item').text('$' + response2.data[0].entranceFees[i].cost + ' ' + response2.data[0].entranceFees[i].description);
+            $('#fees-header').append(newItem);
         };
     });
 };
