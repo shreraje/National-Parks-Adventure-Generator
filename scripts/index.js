@@ -1,8 +1,5 @@
 console.log('Sanity Check');
 //Variable Definitions
-let sunset = $('#sunset');
-let sunrise = $('#sunrise');
-let dayLength = $('#dayLength');
 const card1 = $('#card1');
 const card2 = $('#card2');
 const card3 = $('#card3');
@@ -24,7 +21,6 @@ formBtn.addEventListener('click', (e) => {
 });
     
 
-//API Key: CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv
 //National Park Service Ajax call. Function is attached to searchbar event listener
 function getInfo(stateCode) {
     let queryURLNPS = 'https://developer.nps.gov/api/v1/parks?stateCode=' + stateCode + '&limit=5&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
@@ -74,57 +70,6 @@ function getInfo(stateCode) {
 };
 
 
-//moreInfo will trigger when the user clicks the button on the cards and generate info specifically for the given park
-function moreInfo(parkCode) {
-    let queryURLpark = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&stateCode=&limit=5&sort=&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
-    $.ajax({
-        url: queryURLpark,
-        method: 'GET'
-    }).then(function(response2) {
-        console.log(response2);
-        console.log(response2.data[0].latitude);
-        console.log(response2.data[0].longitude);
-        // Sunrise/Sunset Ajax call. Takes parameters from NPS API
-        let lat = response2.data[0].latitude;
-        let lng = response2.data[0].longitude;
-        let date = moment().format('YYYY-MM-DD');
-        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date;
-        $.ajax({
-            url: queryURLSunrise,
-            method: 'GET'
-        }).then(function (response4) {
-            console.log(response4);
-
-            // Transferring content to HTML for current day surise, sunset & day-length
-            $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
-            $(".sunset").text("Sunset:  " + response4.results.sunset);
-            $(".day-length").text("Day Length:  " + response4.results.day_length);
-
-            console.log("Sunrise:  " + response4.results.sunrise);
-            console.log("Sunset:  " + response4.results.sunset);
-            console.log("Day Length:  " + response4.results.day_length);
-        });
-    });
-};
-
-//Event listener for card buttons to generate further information
-$('.card').on('click', ".cardBtn", function(event) {
-    console.log(event.currentTarget.dataset.parkcode);
-    let parkCode = event.currentTarget.dataset.parkcode;
-    localStorage.setItem('code', parkCode);
-    window.location.href="act.html";
-});
-
-
-// Footer and leaving comments
-
-let commentBox = document.getElementById('comments');
-$('#buttonTwo').on("click",function(event){
-    console.log(commentBox.value)
-    localStorage.setItem("comment box", commentBox.value)
-});
-
-
 // Air quality & Weather Information
 $("button").on("click", function(event) {
     event.preventDefault();
@@ -154,3 +99,19 @@ $("button").on("click", function(event) {
     });
 });
 
+
+//Event listener for card buttons to generate further information
+$('.card').on('click', ".cardBtn", function(event) {
+    console.log(event.currentTarget.dataset.parkcode);
+    let parkCode = event.currentTarget.dataset.parkcode;
+    localStorage.setItem('code', parkCode);
+    window.location.href="act.html";
+});
+
+
+// Footer and leaving comments
+let commentBox = document.getElementById('comments');
+$('#buttonTwo').on("click",function(event){
+    console.log(commentBox.value)
+    localStorage.setItem("comment box", commentBox.value)
+});
