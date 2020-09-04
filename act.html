@@ -1,137 +1,128 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
+<html lang="en-US" dir="ltr">
 
-    <body>
-    
-        <!--nav bar-->
-        <nav>
-            <div class="nav-wrapper">
-              <a href="#" class="brand-logo">Logo</a>
-              <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">JavaScript</a></li>
-              </ul>
-            </div>
-          </nav>
-        
+<head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Import Google Icon Font -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="scripts/styles.css">
+  <!-- Favicon link -->
+  <link rel="icon" href="Images/favicon-16x16.png">
+  <!-- Google Fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>National Park Adventure Generator</title>
+</head>
 
-    <!--container-->
-    <body>
-        
-    
-        <div class="container">
-            <!-- Page Content goes here -->
+<body>
+    <!-- Nav bar -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper">
+            <img src="Images/nature-logo.png" height="128px" width="128px">
+            <ul class="right hide-on-med-and-down">
+                <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <span class="nav-title">NPAG - Adventure starts here</span>
+        </div>
+    </nav>
+
+
+    <!-- Content container -->
+    <div class="container">
         <div class="row">
             <div class="col l4 m4 s12">
+                <!-- Contact card -->
                 <div class="card">
                     <div class="card-image">
-                        <img src="Images/Img1.jpg">
+                        <img id="contact-img" src="Images/Img1.jpg">
                         <span class="card-title">Park contacts</span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="https://developer.nps.gov/api/v1/activities">Activities</a>
-                        </div>
+                        <p id="contact-card">Phone</p>
+                        <p>Email</p>
                     </div>
-                </div>
-            <div class="col l4 m4 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="Images/Img1.jpg">
-                        <span class="card-title">General information</span>
-                    </div>
-                    <div class="card-content">
-                        <p>HOURS</p>
-                         <P>ENTRANCE FEES</P>
-                          <P>SEASONAL INFO
-                        </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            <div class="col l4 m4 s12">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="Images/Img1.jpg">
-                        <span class="card-title">Activitys</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
+                    <div class="card-action">
+                        <a href="">Directions URL</a>
                     </div>
                 </div>
             </div>
-            
-        
-        
-            <!-- Page Content goes here -->
+            <div class="col l4 m4 s12">
+                <!-- General info Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img src="Images/Img1.jpg">
+                        <span class="card-title">Park Climate</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Weather Snippet</p>
+                        <p>Sunrise</p>
+                        <p>Sunset</p>
+                        <p>Daylight Hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col l4 m4 s12">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="Images/Img1.jpg">
+                        <span class="card-title">General Information</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Hours of Operation</p>
+                        <p>Entrance Fees</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="">NPS Park Site</a>
+                    </div>
+                </div>
+            </div>
         </div>
-            
-            
-        
     </div>
-        
-</div>
-    
-    <!-- Card Content -->
-    
-        
-        
-        
-    
-      
-
-    
-       
-        <div class="container canter">
-          <!-- Page Content goes here -->
-          <div class="collection">
-            <a href="#!" class="collection-item">Activities</a>
-            <a href="#!" class="collection-item">Activities</a>
-            <a href="#!" class="collection-item">Activities</a>
-            <a href="#!" class="collection-item">Activities</a>
-            <a href="#!" class="collection-item">Activities</a>
-      </div>
-                
-  </body>
-  
 
 
 
+    </div>
+
+    </div>
+
+
+    <div class="container canter">
+        <!-- Page Content goes here -->
+        <div class="collection">
+            <ul class="collection with-header">
+                <li id="list-header" class="collection-header"><h4>Recommended Activites</h4></li>
+                <li class="collection-item"></li>
+              </ul>
+        </div>
+    </div>
+
+    <div class="container canter">
+        <!-- Page Content goes here -->
+        <div class="collection">
+            <ul class="collection with-header">
+                <li id="list-header" class="collection-header"><h4>Entrance Fees</h4></li>
+                <li class="collection-item"></li>
+              </ul>
+        </div>
+    </div>
 
 
 
-
-
-
-
-
-
-
-      <!-- JavaScript at end of body for optimized loading -->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-   
-      
-      
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- </body>
-  </html>
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+crossorigin="anonymous"></script>
+<!-- Materialize JS link -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Moment.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<!-- External JS Sheet-->
+<script src="scripts/act.js"></script>
+</body>
+</html>
