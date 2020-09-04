@@ -39,12 +39,17 @@
    justify-content: center;
 }
 
-#air-weather-forcast {
+.air-header, .weather-header{
+    font-weight: bolder;
+}
+
+#weather-forcast, #airquality{
     font-weight: bold;
     font-style: italic;
     background-color: rgb(118, 230, 230);
     text-align: center;
 }
+
 .city {
     font-size: 20px;
     font-weight: bold;
