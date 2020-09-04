@@ -22,6 +22,11 @@ function moreInfo() {
             method: 'GET'
         }).then(function (response4) {
             console.log(response4);
+
+            // Transferring content to HTML for current day surise, sunset & day-length
+            $(".sunrise").html("Sunrise:  " + response4.results.sunrise);
+            $(".sunset").html("Sunset:  " + response4.results.sunset);
+            $(".day-length").text("Day Length:  " + response4.results.day_length);
         });
 
         //Generate info for park contacts card
