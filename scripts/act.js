@@ -22,6 +22,7 @@ function moreInfo() {
             url: queryURLSunrise,
             method: 'GET'
         }).then(function (response4) {
+            console.log(response4);
 
             // Transferring content to HTML for current day surise, sunset & day-length
             $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
@@ -42,6 +43,10 @@ function moreInfo() {
         let advisory = $('<p>').text(response2.data[0].operatingHours[0].description);
         $('#advisory').append(advisory);
         $('#park-site').attr('href', response2.data[0].url);
+
+        //Generate info for directions card
+        $('#directions').text(response2.data[0].directionsInfo);
+        $('#directionsurl').attr('href', response2.data[0].directionsUrl);
 
         //List all activities within the proper collection
         for (i = 0; i < response2.data[0].activities.length; i++) {

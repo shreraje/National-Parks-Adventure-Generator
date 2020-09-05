@@ -7,6 +7,10 @@ body {
     font-family: 'Special Elite', cursive;
 }
 
+header {
+    text-align: center;
+}
+
 .quote {
     font-family: 'Lucida Grande', sans-serif;
     font-size: 1.25em;
@@ -69,3 +73,10 @@ body {
 }
 
 /* act.html styles */
+.textwhite {
+    color: white;
+}
+
+.cardurl {
+    color: white;
+}
