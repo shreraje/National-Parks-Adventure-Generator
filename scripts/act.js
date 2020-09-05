@@ -8,7 +8,11 @@ function moreInfo() {
         url: queryURLpark,
         method: 'GET'
     }).then(function(response2) {
+        console.log(response2);
 
+         // Transferring content to HTML for current day surise, sunset & day-length
+         $(".weather-snippet").text(response2.data[0].weatherInfo);
+        
         // Sunrise/Sunset Ajax call. Takes parameters from NPS API
         let lat = response2.data[0].latitude;
         let lng = response2.data[0].longitude;
