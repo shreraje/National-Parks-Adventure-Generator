@@ -11,6 +11,10 @@ header {
     text-align: center;
 }
 
+h2 {
+    font-size: 1.5em;
+}
+
 .quote {
     font-family: 'Lucida Grande', sans-serif;
     font-size: 1.25em;
@@ -39,13 +43,11 @@ header {
 
 #airquality {
     font-style: italic;
-    background-color: rgb(118, 230, 230);
     text-align: center;
 }
 
 .info {
     padding-left: 10px;
-    justify-content: center;
 }
 
 .air-header, .weather-header{
@@ -55,22 +57,26 @@ header {
 #weather-forcast, #airquality{
     font-weight: bold;
     font-style: italic;
-    background-color: rgb(118, 230, 230);
     text-align: center;
 }
 
-.city {
-    font-size: 20px;
-    font-weight: bold;
+.returninfo {
+    font-size: 1.25em;
 }
 
-#footer{
+#footer {
     text-align: center;
     align-content: center;
 }
+
+#comments {
+    border: white 2px solid;
+}
+
 .sunrise, .sunset, .day-length{
     font-weight: bold;
 }
+
 
 /* act.html styles */
 .textwhite {

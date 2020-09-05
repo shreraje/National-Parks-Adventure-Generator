@@ -31,7 +31,7 @@
       </ul>
     </div>
     <div class="nav-content">
-      <span class="nav-title">NPAG - Adventure starts here</span>
+      <span class="nav-title">NPAG - Your journey starts here</span>
     </div>
   </nav>
 
@@ -46,18 +46,18 @@
   <!-- Header -->
   <header>
     <h1>National Park Adventure Generator</h1>
-    <p>Welcome to our National Park Adventure Generator! Below you will be able to search for national parks by state code from the first search bar and will also be able to search air quality via the second search bar.</p>
+    <h2>Welcome to our National Park Adventure Generator! Below you will be able to search for national parks by state code from the first search bar and will also be able to search air quality via the second search bar.</h2>
   </header>
 
 
   <!-- Carousel -->
   <section class="dec-container">
     <div class="carousel">
-      <a class="carousel-item"><img src="Images/Img1.jpg" alt="Rock hill with snow patches overlooking a small lake" height="250px" width="250px"></a>
-      <a class="carousel-item"><img src="Images/Img 2.jpg" alt="Blue sky between the walls of a redrock canyon" height="250px" width="250px"></a>
-      <a class="carousel-item"><img src="Images/Img3.jpg" alt="Redrock formation towering over a river during sunset" height="250px" width="250px"></a>
-      <a class="carousel-item"><img src="Images/Img4.jpg" alt="Lake view with a pine forest and mountain in the background" height="250px" width="250px"></a>
-      <a class="carousel-item"><img src="Images/img5.jpg" alt="Deadhorse redorck formation and river turning in the shape of a 'U'" height="250px" width="250px"></a>
+      <img src="Images/Img1.jpg" alt="Rock hill with snow patches overlooking a small lake" height="250px" width="250px" class="carousel-item">
+      <img src="Images/Img 2.jpg" alt="Blue sky between the walls of a redrock canyon" height="250px" width="250px" class="carousel-item">
+      <img src="Images/Img3.jpg" alt="Redrock formation towering over a river during sunset" height="250px" width="250px" class="carousel-item">
+      <img src="Images/Img4.jpg" alt="Lake view with a pine forest and mountain in the background" height="250px" width="250px" class="carousel-item">
+      <img src="Images/img5.jpg" alt="Deadhorse redorck formation and river turning in the shape of a 'U'" height="250px" width="250px" class="carousel-item">
     </div>
 
     <blockquote class="quote">
@@ -114,12 +114,12 @@
     </div>
   </main>
 
-  <div class="warning yellow lighten-1">
+  <section class="warning yellow lighten-1">
     <i class="material-icons erroricon">error_outline</i>
-    <h2 class="safety">Your health and wellbeing is important to us! Take a moment before you step out for the day to 
+    <h3 class="safety">Your health and wellbeing is important to us! Take a moment before you step out for the day to 
       search your location and view the air quality and weather conditions. 
-    </h2>
-  </div>
+    </h3>
+  </section>
 
   <br>
   
@@ -138,20 +138,20 @@
 
     <!-- Air quality display section-->
     <div class= "green darken-2" id="airquality">
-      <h5 class="air-header"> Air Quality Information</h5>
-        <div class="city">City</div>
-        <div class="date">Date</div>
-        <div class="air-pollution">Air Quality index</div>
-        <p> * Note: Low (1-3); Moderate (4-6); High (7-10); Very High (Above 10)</p>
+      <h4 class="air-header"> Air Quality Information</h4>
+        <div class="city returninfo">City</div>
+        <div class="date returninfo">Date</div>
+        <div class="air-pollution returninfo">Air Quality index</div>
+        <p class="returninfo"> * Note: Low (1-3); Moderate (4-6); High (7-10); Very High (Above 10)</p>
 
       <!-- Weather display section -->
       <div class="green darken-2" id="weather-forcast">
-        <h5 class="weather-header">Weather Information</h5>
-          <div class="temp">Temperature</div>
-          <div class="atm-pressure">Atmospheric Pressure</div>
-          <div class="humidity">Humidity</div>
-          <div class="wind">Wind Speed</div>
-          <div class="wind-direction">Wind Direction</div>
+        <h4 class="weather-header">Weather Information</h4>
+          <div class="temp returninfo">Temperature</div>
+          <div class="atm-pressure returninfo">Atmospheric Pressure</div>
+          <div class="humidity returninfo">Humidity</div>
+          <div class="wind returninfo">Wind Speed</div>
+          <div class="wind-direction returninfo">Wind Direction</div>
       </div>
     </div>
   </section>
