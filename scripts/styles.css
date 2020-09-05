@@ -64,5 +64,8 @@ body {
     text-align: center;
     align-content: center;
 }
+.sunrise, .sunset, .day-length{
+    font-weight: bold;
+}
 
 /* act.html styles */
