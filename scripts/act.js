@@ -1,7 +1,5 @@
-console.log('act.js working');
-
+//Pull parkCode from local storage to run moreInfo function
 let parkCode = localStorage.getItem('code');
-console.log(parkCode);
 
 //moreInfo will generate info specifically for the given park
 function moreInfo() {
@@ -10,7 +8,6 @@ function moreInfo() {
         url: queryURLpark,
         method: 'GET'
     }).then(function(response2) {
-        console.log(response2);
 
         // Sunrise/Sunset Ajax call. Takes parameters from NPS API
         let lat = response2.data[0].latitude;
@@ -21,7 +18,6 @@ function moreInfo() {
             url: queryURLSunrise,
             method: 'GET'
         }).then(function (response4) {
-            console.log(response4);
 
             // Transferring content to HTML for current day surise, sunset & day-length
             $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
@@ -37,15 +33,6 @@ function moreInfo() {
         $('#phone').text('Phone:' + ' ' + response2.data[0].contacts.phoneNumbers[0].phoneNumber + ' ' + 'Ext.' + ' ' + response2.data[0].contacts.phoneNumbers[0].extension);
         $('#email').text('Email:' + ' ' + response2.data[0].contacts.emailAddresses[0].emailAddress);
         $('#directions').attr('href', response2.data[0].directionsUrl);
-
-        // // // Transferring content to HTML for current day surise, sunset & day-length
-        // $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
-        // $(".sunset").text("Sunset:  " + response4.results.sunset);
-        // $(".day-length").text("Day Length:  " + response4.results.day_length);
-
-        // console.log("Sunrise:  " + response4.results.sunrise);
-        // console.log("Sunset:  " + response4.results.sunset);
-        // console.log("Day Length:  " + response4.results.day_length);
 
         //Generate info for park general info card
         let advisory = $('<p>').text(response2.data[0].operatingHours[0].description);

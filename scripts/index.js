@@ -1,4 +1,3 @@
-console.log('Sanity Check');
 //Variable Definitions
 const card1 = $('#card1');
 const card2 = $('#card2');
@@ -28,7 +27,6 @@ function getInfo(stateCode) {
         url: queryURLNPS,
         method: 'GET'
     }).then(function(response1) {
-        console.log(response1);
         
         //cardID array references items in HTML to append cards to
         cardID = [card1, card2, card3, card4];
@@ -70,55 +68,18 @@ function getInfo(stateCode) {
 };
 
 
-//moreInfo will trigger when the user clicks the button on the cards and generate info specifically for the given park
-function moreInfo(parkCode) {
-    let queryURLpark = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&stateCode=&limit=5&sort=&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
-    $.ajax({
-        url: queryURLpark,
-        method: 'GET'
-    }).then(function(response2) {
-        console.log(response2);
-        console.log(response2.data[0].latitude);
-        console.log(response2.data[0].longitude);
-        // Sunrise/Sunset Ajax call. Takes parameters from NPS API
-        let lat = response2.data[0].latitude;
-        let lng = response2.data[0].longitude;
-        let date = moment().format('YYYY-MM-DD');
-        let queryURLSunrise = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + '&date=' + date + '&formatted=0';
-        $.ajax({
-            url: queryURLSunrise,
-            method: 'GET'
-        }).then(function (response4) {
-            console.log(response4);
-
-            // Transferring content to HTML for current day surise, sunset & day-length
-            $(".sunrise").text("Sunrise:  " + response4.results.sunrise);
-            $(".sunset").text("Sunset:  " + response4.results.sunset);
-            $(".day-length").text("Day Length:  " + response4.results.day_length);
-
-            console.log("Sunrise:  " + response4.results.sunrise);
-            console.log("Sunset:  " + response4.results.sunset);
-            console.log("Day Length:  " + response4.results.day_length);
-        });
-    });
-};
-
-
 // Air quality & Weather Information
 $("button").on("click", function(event) {
     event.preventDefault();
     var APIkey = "8ee94bd2-5afc-4e57-825a-4e87cde01a7e";
     var city = $("#city").val();
     var state = $("#state").val();
-    console.log(city);
     var queryURLAir = "https://api.airvisual.com/v2/city?city=" + city + "&state=" + state + "&country=USA&key=" + APIkey;
 
     $.ajax({
         url: queryURLAir,
         method: 'GET'
     }).then(function(response3) {
-        console.log(response3);
-        console.log(response3.data.current.pollution.aqius);
 
         // Transferring content to HTML for current day air quality & weather information
         $(".city").text(response3.data.city );
@@ -136,7 +97,6 @@ $("button").on("click", function(event) {
 
 //Event listener for card buttons to generate further information
 $('.card').on('click', ".cardBtn", function(event) {
-    console.log(event.currentTarget.dataset.parkcode);
     let parkCode = event.currentTarget.dataset.parkcode;
     localStorage.setItem('code', parkCode);
     window.location.href="act.html";
@@ -146,6 +106,5 @@ $('.card').on('click', ".cardBtn", function(event) {
 // Footer and leaving comments
 let commentBox = document.getElementById('comments');
 $('#buttonTwo').on("click",function(event){
-    console.log(commentBox.value)
-    localStorage.setItem("comment box", commentBox.value)
+    localStorage.setItem("comment box", commentBox.value);
 });
