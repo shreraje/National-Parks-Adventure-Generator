@@ -83,6 +83,15 @@ h2 {
     color: white;
 }
 
+
+.container {
+    width: 85%;
+}
+
+.recommended h3 {
+    font-size: 1em;
+}
+
 .btn{
     font-size: 20px;
     font-weight: bold;
