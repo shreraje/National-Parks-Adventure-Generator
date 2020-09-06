@@ -1,8 +1,7 @@
 //Pull parkCode from local storage to run moreInfo function
 let parkCode = localStorage.getItem('code');
 
-//moreInfo will generate info specifically for the given park
-function moreInfo() {
+//Creates general info for the cards, full activity list, and entrance fees collection
     let queryURLpark = 'https://developer.nps.gov/api/v1/parks?parkCode=' + parkCode + '&stateCode=&limit=5&sort=&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
     $.ajax({
         url: queryURLpark,
@@ -50,7 +49,7 @@ function moreInfo() {
 
         //List all activities within the proper collection
         for (i = 0; i < response2.data[0].activities.length; i++) {
-            let item = $('<li>').attr('class', 'collection-item').text(response2.data[0].activities[i].name);
+            let item = $('<li>').attr('class', 'collection-item').addClass('activity').text(response2.data[0].activities[i].name);
             $('#activity-header').append(item);
         };
 
@@ -60,6 +59,19 @@ function moreInfo() {
             $('#fees-header').append(newItem);
         };
     });
-};
 
-moreInfo();
+//This ajax call will create activity suggestions for the user alongside the full activity list
+let queryActive = 'https://developer.nps.gov/api/v1/thingstodo?parkCode=' + parkCode + '&limit=3&api_key=CIOegTmdfiM4Yf3b17p4OpcSRxRf0G6lZ4pgTuOv';
+$.ajax({
+    url: queryActive,
+    method: 'GET'
+}).then(function(response5) {
+    console.log(response5);
+
+    let dataSelect = [response5.data[0], response5.data[1], response5.data[2]];
+    for (i = 0; i < dataSelect.length; i++) {
+        $('<h3>').text(dataSelect[i].title).css('text-decoration', 'underline').appendTo($('.recommended')); 
+        $('.recommended').append(dataSelect[i].shortDescription);
+        $('<p>').text('Duration: ' + dataSelect[i].duration).appendTo($('.recommended'));
+    };
+});
