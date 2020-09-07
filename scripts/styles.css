@@ -106,6 +106,10 @@ h2 {
     transition: 0.2s;
 }
 
-#contacts {
-    padding-bottom: 105px;
+#contacts, #gen-info, #sun-info, #directions{
+    padding-bottom: auto;
+}
+.form{
+    color: #fff;
+    font-weight: bolder
 }
