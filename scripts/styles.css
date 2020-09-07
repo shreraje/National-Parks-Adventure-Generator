@@ -55,10 +55,11 @@ h2 {
     font-weight: bold;
     font-style: italic;
     text-align: center;
+    font-size: 25px;
 }
 
-.returninfo {
-    font-size: 1.25em;
+#returninfo {
+    color: rgb(116, 28, 28);
 }
 
 #footer {
@@ -70,8 +71,24 @@ h2 {
     border: white 2px solid;
 }
 
-.sunrise, .sunset, .day-length{
+
+.btn{
+    font-size: 20px;
     font-weight: bold;
+    border: 2px solid transparent; 
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: yellow;
+    transform: translateY(-5px);
+    border: 2px solid lightblue;
+    transition: 0.2s;
+}
+
+.form{
+    color: #fff;
+    font-weight: bolder
 }
 
 
@@ -93,24 +110,12 @@ h2 {
     font-size: 1em;
 }
 
-.btn{
-    font-size: 20px;
-    font-weight: bold;
-    border: 2px solid transparent; 
-}
-
-.btn:hover{
-    cursor: pointer;
-    color: yellow;
-    transform: translateY(-5px);
-    border: 2px solid lightblue;
-    transition: 0.2s;
-}
 
 #contacts, #gen-info, #sun-info, #directions{
     padding-bottom: auto;
 }
-.form{
-    color: #fff;
-    font-weight: bolder
+            
+.sunrise, .sunset, .day-length{
+    font-weight: bold;
 }
+                
