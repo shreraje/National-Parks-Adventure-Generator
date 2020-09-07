@@ -27,6 +27,7 @@ function getInfo(stateCode) {
         url: queryURLNPS,
         method: 'GET'
     }).then(function(response1) {
+        console.log(response1);
         
         //cardID array references items in HTML to append cards to
         cardID = [card1, card2, card3, card4];
