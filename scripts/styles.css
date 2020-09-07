@@ -51,6 +51,7 @@ h2 {
 }
 
 #weather-forcast, #airquality{
+    color: #fff;
     font-weight: bold;
     font-style: italic;
     text-align: center;
