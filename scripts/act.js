@@ -42,7 +42,7 @@ let parkCode = localStorage.getItem('code');
             response2.data[0].addresses[0].stateCode
             );
         $('#address2').text(
-            'Physical address ' + response2.data[0].addresses[1].line1 + ' ' +
+            'Physical address: ' + response2.data[0].addresses[1].line1 + ' ' +
             response2.data[0].addresses[1].city + ' ' +
             response2.data[0].addresses[1].stateCode
             );
