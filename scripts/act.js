@@ -36,7 +36,16 @@ let parkCode = localStorage.getItem('code');
         //Generate info for park contacts card
         $('#phone').text('Phone:' + ' ' + response2.data[0].contacts.phoneNumbers[0].phoneNumber + ' ' + 'Ext.' + ' ' + response2.data[0].contacts.phoneNumbers[0].extension);
         $('#email').text('Email:' + ' ' + response2.data[0].contacts.emailAddresses[0].emailAddress);
-        $('#directions').attr('href', response2.data[0].directionsUrl);
+        $('#address1').text(
+            'Mailing address: ' + response2.data[0].addresses[0].line1 + ' ' +
+            response2.data[0].addresses[0].city + ' ' +
+            response2.data[0].addresses[0].stateCode
+            );
+        $('#address2').text(
+            'Physical address ' + response2.data[0].addresses[1].line1 + ' ' +
+            response2.data[0].addresses[1].city + ' ' +
+            response2.data[0].addresses[1].stateCode
+            );
 
         //Generate info for park general info card
         let advisory = $('<p>').text(response2.data[0].operatingHours[0].description);
