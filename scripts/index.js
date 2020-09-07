@@ -7,7 +7,7 @@ const card4 = $('#card4');
 
 //Event listener for the searchbar
 const searchBar = document.getElementById('search');
-const formBtn = document.getElementById('btn');
+const formBtn = document.getElementById('btn1');
 formBtn.addEventListener('click', (e) => {
     let stateCode = searchBar.value.toUpperCase();
     if(stateCode.length > 3 || stateCode.length < 2 || isNaN(stateCode) === false) {
