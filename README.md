@@ -1,20 +1,22 @@
-# National-Parks-Adventure-Generator
 
 # National-Parks-Adventure-Generator
 
 
-<h2>General Info</h2>
+## General Info
 The National Parks adventure generator app was designed to help the user discover new parks/trails. It provides the user with helpful information about the parks, weather, and airquality. Informing the user with needed information to plan the perfect adventure.
 
-<h3>Technologies</h3>
+## Technologies:
 -Materialzecss
 -Jquerey
 -Moment.js
--Google Fonts
-    API
+-Google Fonts 
+# API:
 -National Park Service API
 -Air Quality API
 -Sunrise/Sunset API
 
-<h4>Launch</h4>
-https://shreraje.github.io/National-Parks-Adventure-Generator
+## The URL of the deployed application:
+https://shreraje.github.io/Password-Generator/
+
+## The URL of the GitHub repository:
+https://github.com/shreraje/Password-Generator
