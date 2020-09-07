@@ -105,3 +105,7 @@ h2 {
     border: 2px solid lightblue;
     transition: 0.2s;
 }
+
+#contacts {
+    padding-bottom: 130px;
+}
