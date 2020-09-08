@@ -1,17 +1,27 @@
 /* index.html styles */
+/* index.html styles */
 body {
     background-image: linear-gradient(#e8f5e9, #c8e6c9, #a5d6a7);
 }
 
-.nav-title {
+header {
     font-family: 'Special Elite', cursive;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 0;
+    border: none;
 }
 
-header {
+.intro {
     text-align: center;
 }
 
-h2 {
+.intro h2 {
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+.intro h3 {
     font-size: 1.5em;
 }
 
@@ -101,15 +111,17 @@ h2 {
     color: white;
 }
 
-
 .container {
     width: 85%;
 }
 
-.recommended h3 {
-    font-size: 1em;
+.recommended {
+    font-size: 1.5em;
 }
 
+.collection-item:hover {
+    transform: translateX(-10px);
+}
 
 #contacts, #gen-info, #sun-info, #directions{
     padding-bottom: auto;
@@ -118,4 +130,3 @@ h2 {
 .sunrise, .sunset, .day-length{
     font-weight: bold;
 }
-                

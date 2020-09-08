@@ -21,34 +21,30 @@
 
 <body>
 
-  <!-- Nav bar (dropdown for mobile first dev) -->
-  <nav class="nav-extended green darken-2">
-    <div class="nav-wrapper">
-      <img src="Images/nature-logo.png" alt="Logo depicting mountain peaks with sun over the top" height="128" width="128">
+  <!-- Header and nav bar -->
+  <header class="green darken-4">NPAG - Your journey starts here</header>
+  <nav>
+    <div class="nav-wrapper green darken-4">
+      <img class="brand-logo" src="Images/nature-logo.png" alt="Logo depicting mountain peaks with sun over the top" height="75" width="75">
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
         <li><a href="index.html">Home</a></li>
       </ul>
     </div>
-    <div class="nav-content">
-      <span class="nav-title">NPAG - Your journey starts here</span>
-    </div>
   </nav>
 
-  <!--nav bar slide-->
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Maps</a></li>
-    <li><a href="badges.html">Events</a></li>
-    <li><a href="collapsible.html">Reservations</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
+    <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
+    <li><a href="index.html">Home</a></li>
   </ul>
 
-  <!-- Header -->
-  <header>
-    <h1>National Park Adventure Generator</h1>
-    <h2>Welcome to our National Park Adventure Generator! Below you will be able to search for national parks by state code from the first search bar and will also be able to search air quality via the second search bar.</h2>
-  </header>
 
+  <!-- Name and description -->
+  <div class="intro">
+    <h2>National Park Adventure Generator</h2>
+    <h3>Welcome to our National Park Adventure Generator! Below you will be able to search for national parks by state code from the first search bar and will also be able to search air quality via the second search bar.</h3>
+  </div>
 
   <!-- Carousel -->
   <div class="carousel">
@@ -59,6 +55,7 @@
     <img src="Images/Img5.jpg" alt="Aerial view of valley in Yosemite natioanl park" height="250" width="250" class="carousel-item">
   </div>
 
+  <!-- Quote -->
   <blockquote class="quote">
     <pre>
     "Still round the corner there may wait a
@@ -95,18 +92,18 @@
   <!-- Div for park general info cards -->
   <main>
     <div class="row">
-      <div class="col s12 m6 l6 xl6">
+      <div class="col s12 m12 l6 xl6">
         <div id="card1" class="card"></div>
       </div>
-      <div class="col s12 m6 l6 xl6">
+      <div class="col s12 m12 l6 xl6">
         <div id="card2" class="card"></div>
       </div>
     </div>
     <div class="row">
-      <div class="col s12 m6 l6 xl6">
+      <div class="col s12 m12 l6 xl6">
         <div id="card3" class="card"></div>
       </div>
-      <div class="col s12 m6 l6 xl6">
+      <div class="col s12 m12 l6 xl6">
         <div id="card4" class="card"></div>
       </div>
     </div>
@@ -191,16 +188,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- External JS Sheet-->
   <script src="scripts/index.js"></script>
-
-  <!--Nav bar slide script-->
-  <script>
-  $(document).ready(function () {
-    $('.sidenav').sidenav();
-  });
-  </script>
+  <!-- Carousel script -->
   <script>$(document).ready(function () {
     $('.carousel').carousel();
   });</script>
+  <!-- Sidenav script -->
+  <script>
+    $(document).ready(function () {
+    $('.sidenav').sidenav();
+  });
+  </script>
 
 </body>
 </html>

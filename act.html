@@ -21,18 +21,22 @@
 
 <body>
     <!-- Nav bar -->
-    <nav class="nav-extended green darken-4">
-        <div class="nav-wrapper">
-            <img src="Images/nature-logo.png" height="128" width="128">
+    <header class="green darken-4">NPAG - Your journey starts here</header>
+    <nav>
+        <div class="nav-wrapper green darken-4">
+            <img class="brand-logo" src="Images/nature-logo.png" alt="Logo depicting mountain peaks with sun over the top" height="75" width="75">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
                 <li><a href="index.html">Home</a></li>
             </ul>
         </div>
-        <div class="nav-content">
-            <span class="nav-title">NPAG - Your journey starts here</span>
-        </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="https://www.nps.gov/index.htm">National Park Service</a></li>
+        <li><a href="index.html">Home</a></li>
+    </ul>
 
 
     <!-- Content container -->
@@ -142,6 +146,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <!-- External JS Sheet-->
     <script src="scripts/act.js"></script>
+    <!-- Sidenav script -->
+    <script>
+        $(document).ready(function () {
+        $('.sidenav').sidenav();
+      });
+      </script>
 
 </body>
 </html>
