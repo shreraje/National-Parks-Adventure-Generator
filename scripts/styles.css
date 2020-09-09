@@ -1,9 +1,11 @@
-/* index.html styles */
-/* index.html styles */
+/* index.html styles 
+=======================*/
 body {
     background-image: linear-gradient(#e8f5e9, #c8e6c9, #a5d6a7);
 }
 
+/* Page header styles 
+=======================*/
 header {
     font-family: 'Special Elite', cursive;
     font-size: 3em;
@@ -35,6 +37,8 @@ header {
     color: red;
 }
 
+/* Warning box styles 
+====================== */
 .warning {
     border: 2px solid black;
     border-radius: 25px;
@@ -51,6 +55,8 @@ header {
     font-size: 1.5em;
 }
 
+/* Air quality section styles
+============================== */
 #airquality {
     font-style: italic;
     text-align: center;
@@ -72,6 +78,8 @@ header {
     color: rgb(116, 28, 28);
 }
 
+/* Footer and comments styles
+=============================== */
 #footer {
     text-align: center;
     align-content: center;
@@ -102,7 +110,8 @@ header {
 }
 
 
-/* act.html styles */
+/* act.html styles 
+======================*/
 .textwhite {
     color: white;
 }
@@ -111,12 +120,21 @@ header {
     color: white;
 }
 
+.time {
+    display: block;
+}
+
 .container {
     width: 85%;
 }
 
 .recommended {
     font-size: 1.5em;
+}
+
+.border {
+    border: 3px solid black;
+    border-radius: 8px;
 }
 
 .collection-item:hover {
