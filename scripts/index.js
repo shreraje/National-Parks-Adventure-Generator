@@ -27,7 +27,6 @@ function getInfo(stateCode) {
         url: queryURLNPS,
         method: 'GET'
     }).then(function(response1) {
-        console.log(response1);
         
         //cardID array references items in HTML to append cards to
         cardID = [card1, card2, card3, card4];
@@ -41,10 +40,10 @@ function getInfo(stateCode) {
         fetchData = [response1.data[0], response1.data[1], response1.data[2], response1.data[3]];
 
         //Empty content so new items can be placed
-        card1.empty();
-        card2.empty();
-        card3.empty();
-        card4.empty();
+        card1.empty().addClass('green darken-2').css('color', 'white');
+        card2.empty().addClass('green darken-2').css('color', 'white');
+        card3.empty().addClass('green darken-2').css('color', 'white');
+        card4.empty().addClass('green darken-2').css('color', 'white');
 
         //Loop to dynamically generate multiple cards
         for (i = 0; i < cardID.length; i++) {
