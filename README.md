@@ -16,7 +16,7 @@ The National Parks adventure generator app was designed to help the user discove
 - Sunrise/Sunset API
 
 ## Screenshot of the deployed website:
-<img width="2048" alt="Screen Shot 2020-09-07 at 5 18 09 PM" src="https://user-images.githubusercontent.com/61192734/92421618-511f0b00-f12e-11ea-8245-4a65579f6d1e.png">
+<img width="2048" alt="Screen Shot 2020-09-10 at 11 25 23 AM" src="https://user-images.githubusercontent.com/61192734/92780807-69726e00-f358-11ea-8ea9-103004f8e3e9.png">
 
 ## The URL of the deployed application:
 https://shreraje.github.io/Password-Generator/
