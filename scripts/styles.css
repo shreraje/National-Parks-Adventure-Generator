@@ -75,7 +75,9 @@ header {
 }
 
 #returninfo {
-    color: rgb(116, 28, 28);
+    color: red;
+    font-size: 18px;
+    width: 90rem;
 }
 
 /* Footer and comments styles
