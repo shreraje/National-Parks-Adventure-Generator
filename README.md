@@ -1,4 +1,3 @@
-
 # National-Parks-Adventure-Generator
 
 
