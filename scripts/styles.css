@@ -77,7 +77,8 @@ header {
 #returninfo {
     color: red;
     font-size: 18px;
-    width: 90rem;
+    width: 51%;
+    text-align: center;
 }
 
 /* Footer and comments styles
@@ -89,6 +90,9 @@ header {
 
 #comments {
     border: white 2px solid;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
 }
 
 
